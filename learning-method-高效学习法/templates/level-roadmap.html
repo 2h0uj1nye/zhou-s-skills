@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>五等级路线图 — {{skill_name}}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; padding: 24px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 24px; text-align: center; }
+  .level-card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); position: relative; }
+  .level-card::before { content: attr(data-level); position: absolute; top: -10px; left: 20px; background: #667eea; color: #fff; padding: 2px 12px; border-radius: 12px; font-size: 13px; font-weight: 600; }
+  .level-card h2 { font-size: 17px; margin-bottom: 8px; margin-top: 8px; }
+  .level-card .desc { font-size: 14px; color: #555; margin-bottom: 12px; }
+  .level-card h4 { font-size: 13px; color: #333; margin: 12px 0 6px; }
+  .level-card ul { padding-left: 18px; font-size: 13px; color: #555; line-height: 1.8; }
+  .level-card .caveat { background: #fff3e0; border-left: 3px solid #ff9800; padding: 8px 12px; font-size: 12px; color: #e65100; margin-top: 12px; }
+  .connector { text-align: center; color: #aaa; font-size: 20px; margin: 4px 0; }
+  .criterion { background: #e8f5e9; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🗺️ 五等级进阶路线图</h1>
+  {{levels_html}}
+</div>
+</body>
+</html>

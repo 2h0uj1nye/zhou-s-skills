@@ -1,0 +1,8 @@
+{
+  "note": "Central feed URLs. The prepare script fetches content from here. Edit only if the upstream repo (zarazhangrui/follow-builders) moves these files.",
+  "feeds": {
+    "x": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-x.json",
+    "podcasts": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-podcasts.json",
+    "blogs": "https://raw.githubusercontent.com/zarazhangrui/follow-builders/main/feed-blogs.json"
+  }
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>学习计划 — {{skill_name}}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #333; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: #666; font-size: 14px; margin-bottom: 24px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .meta { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 16px; }
+  .meta-item { font-size: 13px; color: #555; }
+  .meta-item strong { color: #333; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { background: #667eea; color: #fff; padding: 10px 12px; text-align: left; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+  tr:hover td { background: #f8f9ff; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
+  .tag-blue { background: #e8f0fe; color: #1a73e8; }
+  .tag-green { background: #e6f4ea; color: #34a853; }
+  .tag-orange { background: #fef3e0; color: #e37400; }
+  .progress-bar { height: 6px; background: #eee; border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📚 学习计划</h1>
+  <p class="subtitle">{{skill_name}} — {{total_hours}} 小时，共 {{sessions}} 次学习</p>
+
+  <div class="card">
+    <div class="meta">
+      <div class="meta-item"><strong>起点：</strong>{{starting_level}}</div>
+      <div class="meta-item"><strong>目标：</strong>{{goal}}</div>
+      <div class="meta-item"><strong>截止时间：</strong>{{deadline}}</div>
+    </div>
+    <div style="margin-top: 12px;">
+      <div style="display:flex; justify-content:space-between; font-size:13px; color:#666; margin-bottom:4px;">
+        <span>总体进度</span><span>0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom:12px;">📋 课程安排</h3>
+    <table>
+      <thead>
+        <tr><th>次数</th><th>主题</th><th>时长</th><th>核心内容</th><th>练习</th><th>资源</th></tr>
+      </thead>
+      <tbody>
+        {{sessions_rows}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom:12px;">💡 学习方法提示</h3>
+    <ul style="padding-left:20px; line-height:2;">
+      <li>每次学习前先回顾上次内容（5-10 分钟）</li>
+      <li>学完一个知识点立即动手练习，不要只看不练</li>
+      <li>遇到卡壳的地方及时记录，最后统一复盘</li>
+      <li>完成每次学习后填写复盘笔记</li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

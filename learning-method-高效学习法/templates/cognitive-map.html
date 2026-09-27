@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>认知地图 — {{skill_name}}</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f7fa; padding: 24px; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 22px; margin-bottom: 20px; text-align: center; }
+  .section { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 16px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #667eea; }
+  .model-item { background: #f8f9ff; border-radius: 8px; padding: 14px; margin-bottom: 12px; }
+  .model-item h3 { font-size: 14px; color: #667eea; margin-bottom: 6px; }
+  .model-item .meta { font-size: 12px; color: #666; margin-bottom: 4px; }
+  .model-item .body { font-size: 13px; color: #333; line-height: 1.6; }
+  .controversy-item { border-left: 3px solid #ff9800; padding-left: 12px; margin-bottom: 16px; }
+  .controversy-item h3 { font-size: 14px; margin-bottom: 6px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-consensus { background: #e6f4ea; color: #34a853; }
+  .tag-debate { background: #fef3e0; color: #e37400; }
+  .tag-uncertain { background: #fce8e6; color: #e53935; }
+  .quiz-section { background: #fafafa; border: 1px dashed #ccc; border-radius: 8px; padding: 16px; }
+  .quiz-section h3 { font-size: 14px; margin-bottom: 10px; }
+  .quiz-item { font-size: 13px; margin-bottom: 8px; padding: 8px; background: #fff; border-radius: 6px; }
+  .answer-reveal { display: none; margin-top: 8px; padding: 8px; background: #e8f5e9; border-radius: 4px; font-size: 12px; }
+  .reveal-btn { font-size: 12px; color: #667eea; cursor: pointer; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🗺️ 认知地图：{{skill_name}}</h1>
+
+  <div class="section">
+    <h2>🧠 Phase 1 — 核心思维模型（共识层）</h2>
+    {{models_html}}
+  </div>
+
+  <div class="section">
+    <h2>⚖️ Phase 2 — 争议边界（分歧层）</h2>
+    {{controversies_html}}
+  </div>
+
+  <div class="section">
+    <h2>📝 Phase 3 — 压力测试题（闭卷作答）</h2>
+    <div class="quiz-section">
+      {{quiz_html}}
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔍 Phase 4 — 溯源验证（自证安全阀）</h2>
+    {{verification_html}}
+  </div>
+</div>
+</body>
+</html>
